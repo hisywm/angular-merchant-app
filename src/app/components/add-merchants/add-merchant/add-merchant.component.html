@@ -1,0 +1,298 @@
+<div class="component-title-container">
+  <h1 class="component-title">Add Merchant</h1>
+</div>
+<div class="content">
+  <div
+    fxLayout
+    fxlayoutGap="16px grid"
+    fxLayoutAlign="center center"
+    [style.margin-top]="'12px'"
+  >
+    <div
+      fxLayout="row"
+      fxFlex="50"
+      fxFlex.xs="100"
+      fxFlex.sm="80"
+      fxFlex.md="80"
+      fxlayoutGap="16px grid"
+    >
+      <mat-card class="mat-elevation-z4">
+        <mat-card-title>Your business information</mat-card-title>
+        <div fxLayout="row" fxLayoutGap="50px">
+          <form [formGroup]="categoryForm" (submit)="onSubmit()" #form="ngForm">
+            <!-- Name Input -->
+            <mat-form-field class="form-full-width" appearance="outline">
+              <mat-label for="name">Person in Charge</mat-label>
+              <input
+                matInput
+                formControlName="name"
+                [ngModel]="name"
+                (ngModelChange)="name = $event.toUpperCase()"
+              />
+              <mat-error *ngIf="hasError('name', 'required')"
+                >Person in charge's name is required.</mat-error
+              >
+              <mat-error *ngIf="hasError('name', 'pattern')"
+                >Please enter a valid name without special
+                characters.</mat-error
+              >
+            </mat-form-field>
+
+            <div
+              class="flex-container"
+              fxLayout
+              fxLayout.xs="column wrap"
+              fxLayoutGap="16px"
+            >
+              <!-- Email Input -->
+              <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label for="email">Email</mat-label>
+                <input matInput formControlName="email" />
+                <mat-hint
+                  >We'll never share your email with anyone else.</mat-hint
+                >
+                <mat-error *ngIf="hasError('email', 'required')"
+                  >Email is required.</mat-error
+                >
+                <mat-error *ngIf="hasError('email', 'pattern')"
+                  >Invalid email format. Ex: test@test.com</mat-error
+                >
+              </mat-form-field>
+
+              <!-- Phone No Input -->
+              <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label for="phone">Mobile Phone</mat-label>
+                <input matInput formControlName="phone" />
+                <mat-error *ngIf="hasError('phone', 'required')"
+                  >Phone number is required.</mat-error
+                >
+                <mat-error *ngIf="hasError('phone', 'pattern')"
+                  >Please enter a valid phone number. Ex: 0123456789</mat-error
+                >
+              </mat-form-field>
+            </div>
+
+            <!-- Company Name Input -->
+            <mat-form-field class="form-full-width" appearance="outline">
+              <mat-label for="merchantName">Merchant Name</mat-label>
+              <input
+                matInput
+                formControlName="merchantName"
+                [ngModel]="merchantName"
+                (ngModelChange)="merchantName = $event.toUpperCase()"
+              />
+              <mat-error *ngIf="hasError('merchantName', 'required')"
+                >Merchant name is required.</mat-error
+              >
+              <mat-error *ngIf="hasError('merchantName', 'pattern')"
+                >Please enter a valid merchant name. Ex: Amer Technology Sdn.
+                Bhd.</mat-error
+              >
+            </mat-form-field>
+
+            <!-- Company SSM Number Input -->
+            <mat-form-field class="form-full-width" appearance="outline">
+              <mat-label for="ssm">Company SSM Number</mat-label>
+              <input
+                matInput
+                formControlName="ssm"
+                [ngModel]="ssm"
+                (ngModelChange)="ssm = $event.toUpperCase()"
+              />
+              <mat-error *ngIf="hasError('ssm', 'required')"
+                >Company SSM Number is required.</mat-error
+              >
+            </mat-form-field>
+
+            <!-- Contract Signee Name Input -->
+            <mat-form-field class="form-full-width" appearance="outline">
+              <mat-label for="signeeName">Contract Signee Name</mat-label>
+              <input
+                matInput
+                formControlName="signeeName"
+                [ngModel]="signeeName"
+                (ngModelChange)="signeeName = $event.toUpperCase()"
+              />
+              <mat-error *ngIf="hasError('signeeName', 'required')"
+                >Signee Name is required.</mat-error
+              >
+              <mat-error *ngIf="hasError('signeeName', 'pattern')"
+                >Please enter a valid signee name without special
+                characters.</mat-error
+              >
+            </mat-form-field>
+
+            <div
+              class="flex-container"
+              fxLayout
+              fxLayout.xs="column wrap"
+              fxLayoutGap="16px"
+            >
+              <!-- Contract Signee IC Input -->
+              <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label for="signeeIC">Contract Signee IC</mat-label>
+                <input matInput formControlName="signeeIC" />
+                <mat-error *ngIf="hasError('signeeIC', 'required')"
+                  >Contract Signee IC is required.</mat-error
+                >
+                <mat-error *ngIf="hasError('signeeIC', 'pattern')"
+                  >Please enter a valid IC number with the dash. Ex:
+                  XXXXXX-XX-XXXX</mat-error
+                >
+              </mat-form-field>
+
+              <!-- Business Type Input -->
+              <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label for="businessType"
+                  >Select Business/Cuisine Type</mat-label
+                >
+                <mat-select formControlName="businessType">
+                  <mat-option
+                    *ngFor="let businessType of businessTypes"
+                    [value]="businessType.name"
+                  >
+                    {{ businessType.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('businessType', 'required')"
+                  >Business Type is required</mat-error
+                >
+              </mat-form-field>
+            </div>
+
+            <!-- Street 1 Input -->
+            <mat-form-field class="form-full-width" appearance="outline">
+              <mat-label for="street1">Street 1</mat-label>
+              <input
+                matInput
+                formControlName="street1"
+                [ngModel]="street1"
+                (ngModelChange)="street1 = $event.toUpperCase()"
+              />
+              <mat-error *ngIf="hasError('street1', 'required')"
+                >Street 1 is required.</mat-error
+              >
+            </mat-form-field>
+
+            <!-- Street 2 Input -->
+            <mat-form-field class="form-full-width" appearance="outline">
+              <mat-label for="street2">Street 2</mat-label>
+              <input
+                matInput
+                formControlName="street2"
+                [ngModel]="street2"
+                (ngModelChange)="street2 = $event.toUpperCase()"
+              />
+              <mat-error *ngIf="hasError('street2', 'required')"
+                >Street 2 is required.</mat-error
+              >
+            </mat-form-field>
+
+            <div
+              class="flex-container"
+              fxLayout
+              fxLayout.xs="column wrap"
+              fxLayoutGap="16px"
+            >
+              <!-- State Input -->
+              <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label for="state">State</mat-label>
+                <mat-select
+                  formControlName="state"
+                  (selectionChange)="onStateChange()"
+                >
+                  <mat-option *ngFor="let state of states" [value]="state">
+                    {{ state.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('state', 'required')"
+                  >State is required.</mat-error
+                >
+              </mat-form-field>
+
+              <!-- City Input -->
+              <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label for="city">City</mat-label>
+                <mat-select
+                  formControlName="city"
+                  (selectionChange)="onCityChange($event)"
+                >
+                  <mat-option *ngFor="let city of cities" [value]="city.name">
+                    {{ city.name }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="hasError('city', 'required')"
+                  >City is required.</mat-error
+                >
+              </mat-form-field>
+
+              <!-- Postal Code Input -->
+              <mat-form-field class="form-full-width" appearance="outline">
+                <mat-label for="postalCode">Postal Code</mat-label>
+                <input matInput formControlName="postalCode" />
+                <mat-error *ngIf="hasError('postalCode', 'required')"
+                  >Postal code is required</mat-error
+                >
+                <mat-error *ngIf="hasError('postalCode', 'pattern')"
+                  >Please enter a valid postal code. Ex: 51200</mat-error
+                >
+              </mat-form-field>
+            </div>
+
+            <!-- Business Category Input -->
+            <mat-form-field class="form-full-width" appearance="outline">
+              <mat-label for="businessCategory"
+                >Select Business/Cruisine Category</mat-label
+              >
+              <mat-select formControlName="businessCategory">
+                <mat-option
+                  *ngFor="let businessCategory of businessCategories"
+                  [value]="businessCategory.name"
+                >
+                  {{ businessCategory.name }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="hasError('businessCategory', 'required')"
+                >Business/cruisine category is required.</mat-error
+              >
+            </mat-form-field>
+
+            <mat-hint>
+              Please check your email for the verification code to the merchant
+              onboarding form and the details to take note of during sign up.
+              Please submit only 1 application for each business/entity.
+            </mat-hint>
+
+            <mat-card-actions
+              fxLayout="row wrap"
+              fxlayoutGap="16px grid"
+              fxLayoutAlign="center center"
+            >
+              <!-- Back Button -->
+              <button
+                mat-button
+                routerLink="/manage-merchant"
+                style="margin-right: 10px"
+                color="warn"
+              >
+                <mat-icon>keyboard_backspace</mat-icon>
+                Back
+              </button>
+              <!-- Submit Button -->
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                class="btn btn-primary"
+                style="margin-right: 5px"
+                [disabled]="!categoryForm.valid"
+              >
+                Submit
+              </button>
+            </mat-card-actions>
+          </form>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

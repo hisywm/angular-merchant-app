@@ -1,0 +1,414 @@
+<div fxLayout="column" fxLayoutGap="100px" fxLayoutGap.xs="50px">
+  <!-- Toolbar -->
+  <div>
+    <mat-toolbar>
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+      </mat-menu>
+      <div>
+        <img
+          class="img-fluid"
+          height="80px"
+          width="80px"
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flogos-download.com%2Fwp-content%2Fuploads%2F2018%2F03%2FGrab_logo_green.png&f=1&nofb=1"
+        />
+      </div>
+
+      <span class="example-spacer"></span>
+      <span>Help Centre</span>
+      <span class="example-icon"></span>
+      <button
+        mat-icon-button
+        class="example-icon favorite-icon"
+        aria-label="Example icon-button with heart icon"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+
+  <div
+    fxLayout="column"
+    fxLayout.xs="column"
+    fxLayoutGap="150px"
+    fxLayoutGap.xs="150px"
+    class="container"
+    style="padding-bottom: 50px"
+  >
+    <!-- Title -->
+    <div class="">
+      <p class="display-3 fw-bold">
+        Despite these uncertain times, we're still here to serve you.
+      </p>
+    </div>
+
+    <!-- Body -->
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="150px">
+      <div fxLayout="column" fxLayoutGap="100px">
+        <!-- 1 -->
+        <div fxLayout="column" fxLayoutGap="50px">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+            <div fxLayout="column" fxLayoutAlign="center">
+              <p class="fs-1 fw-bold lh-base">FOOD DELIVERY</p>
+            </div>
+            <div>
+              <p class="fs-5 lh-base word-wrap">
+                Get your comfort food from your favourite restaurant without
+                leaving home. Order via the Grab app, or click below to order
+                from our website.
+              </p>
+              <button mat-stroked-button>
+                <mat-icon>arrow_right_alt</mat-icon>
+                Order via website
+              </button>
+            </div>
+          </div>
+          <img
+            class="img-fluid"
+            src="https://assets.grab.com/wp-content/uploads/sites/4/2020/04/23144828/covid-image-food-delivery-new.png"
+          />
+        </div>
+        <!-- 2 -->
+        <div fxLayout="column" fxLayoutGap="50px">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+            <div fxLayout="column" fxLayoutAlign="center">
+              <p class="fs-1 fw-bold lh-base">DELIVERY SERVICES</p>
+            </div>
+            <div>
+              <p class="fs-5 lh-base word-wrap">
+                Need help to send or receive packages safely and quickly?
+                GrabExpress is still available.
+              </p>
+              <button mat-stroked-button>
+                <mat-icon>arrow_right_alt</mat-icon>
+                Book now
+              </button>
+            </div>
+          </div>
+          <img
+            class="img-fluid"
+            src="https://assets.grab.com/wp-content/uploads/sites/4/2020/07/24145812/covid-image-delivery-services%402x.jpg"
+          />
+        </div>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="150px" fxFlex="580px" fxFlex.xs="0">
+        <!-- Buttons -->
+        <div>
+          <div fxLayout="column" fxLayoutGap="30px">
+            <div fxLayout="row" fxLayoutAlign="end">
+              <button mat-stroked-button>
+                <mat-icon>add_box</mat-icon>
+                Want to ride with us?
+              </button>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end">
+              <button mat-stroked-button>
+                <mat-icon>add_box</mat-icon>
+                Are you a restaurant owner?
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- 3 -->
+        <div fxLayout="column" fxLayoutGap="50px">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px">
+            <div fxLayout="column" fxLayoutAlign="center">
+              <p class="fs-1 fw-bold lh-base">GROCERIES</p>
+            </div>
+            <div>
+              <p class="fs-5 lh-base word-wrap">
+                From fresh produce to essential hygiene products, get what you
+                need from GrabMart in a few clicks.
+              </p>
+              <button mat-stroked-button>
+                <mat-icon>arrow_right_alt</mat-icon>
+                Download the app
+              </button>
+            </div>
+          </div>
+          <img
+            class="img-fluid"
+            src="https://assets.grab.com/wp-content/uploads/sites/4/2020/07/24145702/covid-image-groceries%402x.jpg"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="display-3 fw-bold">
+        Learn more about the many different ways we serve your everyday needs.
+      </p>
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutGap="50px grid">
+      <!-- Card 1 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152746/02-icon-food-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Pay</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Helps you make cashless payments quickly, safely, and securely.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152740/01-icon-transport-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Transport</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Takes you from A to B safely with upfront prices.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2020/08/26171121/Mart-Icon.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Mart</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Find everything you need.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152748/03-icon-delivery-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Delivery</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Gets your documents or packages to their destination, on-demand.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152829/15-icon-pay-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Pay</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Helps you make cashless payments quickly, safely and securely.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152754/05-icon-airtime-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Airtime</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Helps you stay connected with quick prepaid top-ups.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152751/04-icon-hotels-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Hotels</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Gets your hotel bookings sorted, easy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152817/11-icon-rewards-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Rewards</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Lets you earn points, and unlock benefits with every Grab
+            transaction.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2020/02/24122615/icon-grabgift-700x700.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Gifts</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Send fun yet practical Grab gift cards to family and friends.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div fxLayout="column" fxFlex="25%" fxFlex.xs="50%">
+        <img
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2021/03/05140606/icon-insurance1.png"
+        />
+        <div fxLayout="column" fxLayoutAlign="center">
+          <p class="fs-5 lh-base">Insurance</p>
+        </div>
+        <div>
+          <p class="fs-6 lh-base word-wrap text-muted">
+            Conveniently access insurance coverage for your everyday needs.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="display-3 fw-bold">Get the app.</p>
+      <div fxLayout="row" fxLayoutGap="50px">
+        <img
+          fxFlex.xs="40%"
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152719/01-app-store-btn-250x74.png"
+        />
+        <img
+          fxFlex.xs="40%"
+          class="img-fluid"
+          src="https://assets.grab.com/wp-content/uploads/sites/8/2019/09/20152722/02-play-store-btn-250x74.png"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="pb-5 pt-5" style="background-color: #08b44c">
+    <div class="container mt-5 mb-5" fxLayout="column" fxLayoutGap="10px">
+      <div>
+        <p class="display-3 fw-bold" style="color: #d6ef52">Newsroom</p>
+      </div>
+      <div>
+        <button mat-stroked-button style="color: white">
+          Stay up-to-date with our latest news.
+          <mat-icon>arrow_right_alt</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pb-5">
+    <div class="container" fxLayout="row" fxLayoutGap="50px">
+      <div fxLayout="column" fxLayoutGap="5px" fxFlex="15%" fxFlex.xs="100%">
+        <p><b>Forward Together</b></p>
+        <p class="word-wrap">
+          G-02 Ground Floor, Block A, Axis Business Campus, No 13A & 13B Jalan
+          225, Section 51A, Petaling Jaya, 46100 Selangor.
+        </p>
+        <p class="word-wrap">
+          Business Registration: MyTeksi Sdn. Bhd. - 201101025619 GrabCar Sdn.
+          Bhd. - 201401013360
+        </p>
+      </div>
+      <div fxLayout="column" fxShow.xs="false" fxLayoutGap="5px">
+        <p><b>About</b></p>
+        <a href="">Brand Story</a>
+        <a href="">Locations</a>
+        <a href="">Trust & Safety</a>
+        <a href="">Social Impact</a>
+        <a href="">Newsroom</a>
+        <a href="">Careers</a>
+      </div>
+      <div fxLayout="column" fxShow.xs="false" fxLayoutGap="5px">
+        <p><b>Consumer</b></p>
+        <a href="">What's New</a>
+        <a href="">Transport</a>
+        <a href="">GrabFood</a>
+        <a href="">GrabMart</a>
+        <a href="">GrabExpress</a>
+        <a href="">GrabPay</a>
+        <a href="">GrabRewards</a>
+        <a href="">GrabGifts</a>
+        <a href="">GrabInsure</a>
+        <a href="">GrabMart</a>
+      </div>
+      <div fxLayout="column" fxShow.xs="false" fxLayoutGap="5px">
+        <p><b>Driver</b></p>
+        <a href="">What's New</a>
+        <a href="">Transport</a>
+        <a href="">Grab Delivery Partner</a>
+        <a href="">Driver Centre</a>
+      </div>
+      <div fxLayout="column" fxShow.xs="false" fxLayoutGap="5px">
+        <p><b>Merchant</b></p>
+        <a href="">GrabPay</a>
+        <a href="">GrabFood</a>
+        <a href="">GrabMart</a>
+        <a href="">Pay Later</a>
+      </div>
+      <div fxLayout="column" fxShow.xs="false" fxLayoutGap="5px">
+        <p><b>Enterprise</b></p>
+        <a href="">Grab for Business</a>
+        <a href="">GrabAds</a>
+        <a href="">GrabGifts</a>
+        <a href="">GrabExpress</a>
+        <a href="">Business Delivery Service</a>
+      </div>
+      <div fxLayout="column" fxShow.xs="false" fxLayoutGap="5px">
+        <p><b>Quick Links</b></p>
+        <a href="">Help Centre</a>
+        <a href="">Food Menu</a>
+        <a href="">Covid-19 Updates</a>
+        <a href="">Developer Portal</a>
+      </div>
+    </div>
+  </div>
+</div>

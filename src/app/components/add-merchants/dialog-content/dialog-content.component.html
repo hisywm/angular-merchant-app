@@ -1,0 +1,103 @@
+<h2 mat-dialog-title>Confirm your details</h2>
+<mat-dialog-content class="mat-typography">
+  <h4>Take a moment to make sure your details are correct.</h4>
+
+  <section class="example-section">
+    <label style="margin-bottom: 10px">
+      Person In Charge: <b>{{ name }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Email: <b>{{ email }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Phone: <b>{{ phone }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Merchant Name: <b>{{ merchantName }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Company SSM Number: <b>{{ ssm }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Contract Signee Name: <b>{{ signeeName }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Contract Signee IC: <b>{{ signeeIC }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Business Type: <b>{{ businessType }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Address: <b>{{ fullAddress }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Business/Cruisine Category: <b>{{ businessCategory }}</b>
+    </label>
+    <br />
+    <label style="margin-bottom: 10px">
+      Status: <b>{{ status }}</b>
+    </label>
+  </section>
+
+  <br />
+
+  <form [formGroup]="FormGroup">
+    <section class="example-section">
+      <mat-checkbox class="example-margin" formControlName="checkBox1">
+        <span style="color: red">This field is required.</span>
+      </mat-checkbox>
+      <p>
+        I am merchant and hereby agree that I am sending this application as an
+        interest to sign up as a this app merchant partner.
+      </p>
+
+      <br />
+      <mat-checkbox class="example-margin" formControlName="checkBox2">
+        <span style="color: red">This field is required.</span>
+      </mat-checkbox>
+      <p>
+        I acknowledge that there will be service fees charged by this app for
+        services rendered.
+      </p>
+      <br />
+
+      <mat-checkbox class="example-margin" formControlName="checkBox3">
+        <span style="color: red">This field is required.</span>
+      </mat-checkbox>
+      <p>
+        By proceeding, I agree that this app can collect, use and disclose the
+        information provided by me, on behalf of the applicant company, in
+        accordance with this app's Privacy Notice which I have read and
+        understand.
+      </p>
+      <br />
+    </section>
+
+    <section class="example-section">
+      <re-captcha
+        (resolved)="getToken($event)"
+        (error)="onError($event)"
+        errorMode="handled"
+        siteKey="6LcKqCEeAAAAAMS8aW6S8YgguI4SI8WdSRy019pD"
+        formControlName="recaptcha"
+      >
+      </re-captcha>
+    </section>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" [disabled]="!FormGroup.valid">
+    Confirm
+  </button>
+</mat-dialog-actions>

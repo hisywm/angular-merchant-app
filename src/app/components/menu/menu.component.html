@@ -1,0 +1,61 @@
+<!-- <div class="col-lg-8 mx-auto p-3 py-md-5">
+  <main>
+    <div class="container px-4 py-5" id="featured-3">
+      <h1 class="text-center pb-2 border-bottom">Menu</h1>
+    </div>
+
+    <div class="content">
+      <div
+        fxLayout="row wrap"
+        fxlayoutGap="16px grid"
+        [style.margin-top]="'12px'"
+      >
+        <div fxFlex="25" fxFlex.xs="50" fxFlex.sm="50">
+          <div class="feature col">
+            <div class="button-container">
+              <button
+                mat-fab
+                color="primary"
+                routerLink="/settings-manage-merchant"
+              >
+                <mat-icon>assignment</mat-icon>
+              </button>
+              <mat-label class="py-3">Manage Merchant</mat-label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pt-5 my-5 text-muted border-top">
+    Created by the Bootstrap team &middot; &copy; 2021
+  </footer>
+</div> -->
+
+<div class="component-title-container">
+  <h1 class="component-title">Settings</h1>
+</div>
+<div class="content">
+  <div fxLayout="row wrap" fxlayoutGap="16px grid" [style.margin-top]="'12px'">
+    <!-- Manage Merchant Button -->
+    <div fxFlex="25" fxFlex.xs="50" fxFlex.sm="50">
+      <div class="button-container">
+        <button mat-fab color="primary" routerLink="/manage-merchant">
+          <mat-icon>campaign</mat-icon>
+        </button>
+        <mat-label>Manage Merchant</mat-label>
+      </div>
+    </div>
+
+    <!-- Home Button -->
+    <div fxFlex="25" fxFlex.xs="50" fxFlex.sm="50">
+      <div class="button-container">
+        <button mat-fab color="primary" routerLink="/home">
+          <mat-icon>home</mat-icon>
+        </button>
+        <mat-label>Home</mat-label>
+      </div>
+    </div>
+  </div>
+</div>
