@@ -12,4 +12,7 @@ This project was developed to help me learn on how to replicate existing web app
 
 ## Screenshots
 
-![Home Page](https://i.imgur.com/wUT8O4E.png "Home Page")
+1. Here is what the Homepage looks like.
+
+![Home Page](https://i.imgur.com/wUT8O4E.png "Home Page 1")
+![Home Page](https://imgur.com/SfO9zDp.png "Home Page 2")
